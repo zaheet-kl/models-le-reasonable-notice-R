@@ -1,4 +1,4 @@
-name: Deploy Model to Endpoint
+name: deploy-model-endpoint
 
 on:
   workflow_dispatch:
