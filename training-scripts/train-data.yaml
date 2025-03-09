@@ -1,0 +1,5 @@
+$schema: https://azuremlschemas.azureedge.net/latest/data.schema.json
+type: uri_file
+name: reasonable-notice-data
+description: reasonable notice dataset
+path: ./reasonable_notice.csv

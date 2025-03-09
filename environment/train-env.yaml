@@ -1,0 +1,6 @@
+$schema: https://azuremlschemas.azureedge.net/latest/environment.schema.json
+name: reasonable-notice-env
+description: Environment created from a Docker image plus Conda environment to train taxi model.
+build:
+  path: .
+  dockerfile_path: ./Dockerfile

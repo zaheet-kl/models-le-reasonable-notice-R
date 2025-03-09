@@ -1,0 +1,24 @@
+$schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
+type: pipeline
+display_name: reasonable_notice_training_pipeline
+experiment_name: reasonable-notice-training
+description: Training pipeline using reasonable-notice-env
+
+outputs:
+  trained_model:
+    type: uri_folder
+  
+settings:
+  default_datastore: azureml:workspaceblobstore
+  default_compute: azureml:cpu-cluster
+  continue_on_step_failure: false
+
+jobs:
+  train_model:
+    type: command
+    command: Rscript rn_trainingscript.R ${{outputs.trained_model}}
+    environment: azureml:reasonable-notice-env@latest
+    code: ./training-scripts
+    outputs:
+      trained_model: ${{parent.outputs.trained_model}} 
+        

@@ -1,0 +1,5 @@
+$schema: https://azuremlschemas.azureedge.net/latest/environment.schema.json
+name: az-cli-env
+description: Vanilla Azure CLI Docker Image
+version: 1
+image: mcr.microsoft.com/azure-cli
